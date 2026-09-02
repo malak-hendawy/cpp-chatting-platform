@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Chat GUI",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "/D_UNICODE",
+                "/DUNICODE",
+                "GuiMain.cpp",
+                "ChatSystem.cpp",
+                "User.cpp",
+                "/Fe:GuiChat.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Build the GUI version of the Chat Application"
+        },
+        {
+            "label": "Build Chat Console",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "DS PROJ.cpp",
+                "ChatSystem.cpp",
+                "User.cpp",
+                "/Fe:ConsoleChat.exe"
+            ],
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Build the Console version of the Chat Application"
+        }
+    ]
+}
